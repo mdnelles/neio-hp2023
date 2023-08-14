@@ -9,7 +9,7 @@ seo:
 slogan: Trusted By Fortune 500 Companies
 ---
 
-# *Carl Hanson*
+# *Michael Nelles*
 
 ## <Typewriter>Full-Stack Developer</Typewriter>
 

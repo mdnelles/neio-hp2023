@@ -13,52 +13,50 @@ images:
     alt: my photo
 ---
 
-# <Typewriter>Carl Hanson</Typewriter>
+# <Typewriter>Michael Nelles</Typewriter>
 
-# *Web Developer* <span>&</span> *Growth Consultant*
+# *Full Stack Engineer*  
 
 <Sep size={12} />
-
-Sometimes five Imprimaturs are seen together dialogue-wise in the
-piazza of one title-page, complimenting and ducking each to other with
-their shaven reverences, whether the author, who stands by in
-perplexity at the foot of his epistle, shall to the press or to the
-sponge.
+Thank you for taking the time to view my personal website. I am a remote-work-only web developer with over 6 years experience. My current preferred stack includes, but is not limited to, React(NextJS), Node(Nest), SQL/NoSQL Type/Javascript. I have completed extensive work in Fintech and have successfully parlayed that into Biotech and other industries.
 
 
 
 ---achievements
 - number: 6+
   text: Years of experience
-- number: 60+
-  text: Projects Completed
-- number: 5
-  text: OpenSource Libraries
+- number: 200+
+  text: Github Repos
+- number: 4.1M
+  text: People reached on StackOverflow
 ---
 
 
 
 ---cta
 ---
-<Button href="/contact" size="lg">
+<Button href="/dwn-resume.pdf" size="lg">
   Download Resume
 </Button>
 
 
 
 ---companies
-title: Trusted By
+title: 
 list:
-  - name: Company 1
+  - name: NodeJS
     icon:
-      src: /icons/logo-1.svg
-  - name: Company 2
+      src: /icons/nodejs-icon.svg
+  - name: React
     icon:
-      src: /icons/logo-3.svg
-  - name: Company 3
+      src: /icons/react-2.svg
+  - name: GraphQL
     icon:
-      src: /icons/logo-3.svg
-  - name: Company 4
+      src: /icons/graphql2.svg
+  - name: TypeScript
     icon:
-      src: /icons/logo-4.svg
+      src: /icons/typescript.svg
+  - name: MongoDB
+    icon:
+      src: /icons/mongodb.svg
 ---

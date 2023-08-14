@@ -2,40 +2,49 @@
 layout: About
 seo:
   title: About Me
-  description: Custom description for this page goes here
+  description: Full Stack Engineer BsC Comp Sci
 ---
 
 
 
 ---personal_info
-name: CARL HANSON
+name: MICHAEL NELLES
 images:
   - src: /about.jpg
     alt: my image
 ---
 ##### <span>01.</span> About me
 
-Lorem consequat reprehenderit ipsum nulla qui pariatur tempor officia ad. Excepteur excepteur pariatur ad laborum labore reprehenderit. Do eiusmod sit pariatur nisi. Quis non dolor amet magna eu adipisicing est ex.
+Innovative and deadline-driven Javascript Framework Engineer with 5+ years of experience designing and developing data driven applications from wireframe to production.
+
+Highly compatible in the UX/UI environment as an Engineer for implementation of concepts brought forth by Visual Designers & Interaction designers alike.
 
 ##### <span>02.</span> Interests and Hobbies
 
-Ad Lorem et amet exercitation enim culpa nulla laboris eu eiusmod. Irure fugiat sunt esse consequat consectetur eu laboris voluptate eiusmod dolor. Nisi velit consectetur deserunt esse aliquip esse officia consequat eiusmod voluptate cupidatat id.
+While my skills shine through crafting efficient web applications, my passions span wider horizons. My fascination with Crypto,Architecture and AI isn't just about technology – it's about envisioning the future.  
+
+ From optimizing algorithms to designing intricate systems, I see parallels in every aspect. Navigating the complex realm of cryptocurrencies marries my coding prowess with financial intrigue. I am the coder with a vision, threading together innovation, tech, and architecture into a singular, dynamic tapestry.
 
 ##### <span>03.</span> Framework Preferences
 
-Ullamco cillum pariatur qui eu. Aliqua quis in adipisicing nulla do. Reprehenderit cupidatat eiusmod cupidatat ut ipsum pariatur Lorem incididunt. Veniam sunt reprehenderit consectetur ullamco laborum magna sit aliquip minim esse.
+- NodeJS  / Express
+- React / NextJS 
+- GraphQL / Apollo
+- TypeScript / JavaScript
+- MongoDB / PostgreSQL
+
 
 
 
 ---cta
 ---
-## Ready to discuss your project?
+---## Ready to discuss your project?
 
-Let's super-charge your business today!
+---Let's super-charge your business today!
 
-<Button href="/contact">
-  Get a Free Price Quote
-</Button>
+---<Button href="/contact">
+---  Get a Free Price Quote
+---</Button> 
 
 
 
@@ -53,25 +62,29 @@ list:
 title: Back-End Development
 list:
   - title: Node.js
-    level: 1
-    icon:
-      src: /icons/nodedotjs.svg
-  - title: Prisma
-    level: 3
-    icon:
-      src: /icons/prisma.svg
-  - title: Svelte
     level: 4
     icon:
-      src: /icons/svelte.svg
-  - title: HTML5
-    level: 5
+      src: /icons/nodejs-icon.svg
+  - title: CI/CD
+    level: 4
     icon:
-      src: /icons/html5.svg
-  - title: Solidity
-    level: 2
+      src: /icons/github-icon.svg
+  - title: GraphQL
+    level: 3
     icon:
-      src: /icons/solidity.svg
+      src: /icons/graphql2.svg
+  - title: PostgreSQL
+    level: 4
+    icon:
+      src: /icons/postgresql.svg
+  - title: MongoDB
+    level: 3
+    icon:
+      src: /icons/mongodb.svg
+  - title: NPM
+    level: 3
+    icon:
+      src: /icons/npm.svg
 ---
 
 
@@ -82,30 +95,30 @@ list:
 ########################################
 title: Front-End UI/UX Design
 list:
-  - title: JavaScript
+  - title: React
     level: 4
     icon:
-      src: /icons/javascript.svg
-  - title: React
+      src: /icons/react.svg
+  - title: NextJS
     level: 3
     icon:
-      src: /icons/react.svg
+      src: /icons/next-js.svg
   - title: Redux
     level: 4
     icon:
       src: /icons/redux.svg
-  - title: GraphQL
-    level: 2
-    icon:
-      src: /icons/graphql.svg
-  - title: Node.js
+  - title: TypeSCript
     level: 4
     icon:
-      src: /icons/nodedotjs.svg
-  - title: Prisma
-    level: 5
+      src: /icons/typescript.svg
+  - title: HTML5
+    level: 4
     icon:
-      src: /icons/prisma.svg
+      src: /icons/html-1.svg
+  - title: CSS
+    level: 3
+    icon:
+      src: /icons/css-3.svg
 ---
 
 
@@ -113,15 +126,15 @@ list:
 ---history[0]
 title: Employment
 list:
-  - name: MetaVerse Inc.
-    description: Web3 Developer
-    date: 2020-Present
-  - name: Vircil Intl Co..
-    description: Back-End Developer and Designer
-    date: 2018-2020
-  - name: Crowdcube Inc.
-    description: Technical Support
-    date: 2018-2015
+  - name: a3o Solutions (Panama City, PA)
+    description: Full Stack Engineer
+    date: 2022-Present
+  - name: Overlayanalytics (Dallas, TX)
+    description: Back-End Developer /DBA
+    date: 2020-2022
+  - name: JSMART (Toronto,ON)
+    description: Javascript Engineer
+    date: 2015-2020
 ---
 
 
@@ -129,13 +142,8 @@ list:
 ---history[1]
 title: Education
 list:
-  - name: Stanford university
-    description: MSc (Computer Science)
-    date: 2006-2010
-  - name: University of Los Angeles
-    description: MSc (Human Computer Interaction)
-    date: 2010-2014
-  - name: Berkeley University
-    description: MSc (Information Technology)
-    date: 2015-2019
+  - name: York University
+    description: BSc (Computer Science)
+    date: 2016-2019
+
 ---

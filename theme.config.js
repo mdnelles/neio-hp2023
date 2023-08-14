@@ -132,10 +132,10 @@ export const mdxConfig = {
 
 export const siteMetaData = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL || 'http://localhost:3000',
-  authorName: 'Carl Hanson',
-  siteName: 'Carl Hanson',
-  defaultTitle: 'Carl Hanson Personal Site',
-  titleTemplate: 'Carl Hanson | %s',
+  authorName: 'Michael Nelles',
+  siteName: 'Michael Nelles',
+  defaultTitle: 'Michael Nelles Personal Site',
+  titleTemplate: 'Michael Nelles | %s',
   description: 'A short description goes here.',
   email: 'hello@example.com',
   locale: 'en_US',
