@@ -10,7 +10,7 @@ seo:
 ---personal_info
 name: MICHAEL NELLES
 images:
-  - src: /about.jpg
+  - src: /about2.jpg
     alt: my image
 ---
 ##### <span>01.</span> About me
@@ -93,12 +93,12 @@ list:
 ########################################
 ### Skills
 ########################################
-title: Front-End UI/UX Design
+title: Front-End Development
 list:
   - title: React
     level: 4
     icon:
-      src: /icons/react.svg
+      src: /icons/react-2.svg
   - title: NextJS
     level: 3
     icon:
@@ -107,7 +107,7 @@ list:
     level: 4
     icon:
       src: /icons/redux.svg
-  - title: TypeSCript
+  - title: TypeScript
     level: 4
     icon:
       src: /icons/typescript.svg

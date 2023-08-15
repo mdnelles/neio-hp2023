@@ -16,7 +16,7 @@ repositories:
   ### My Open-Source Projects
 </PageTitle>
 
-Discover my most popular open-source projects on Github.
+Discover my most popular open-source projects on <a href="https://github.com/mdnelles" target="_blank">Github</a>.
 
 
 

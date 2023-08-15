@@ -19,7 +19,6 @@ export const menu = [
     name: 'Home',
     slug: '/',
     Icon: TfiHome,
-    number: 1,
   },
   // {
   //   name: 'Home (2)',
@@ -49,11 +48,11 @@ export const menu = [
     slug: '/services',
     Icon: SlBriefcase,
   },
-  {
-    name: 'Articles',
-    slug: '/blog',
-    Icon: TfiPencilAlt,
-  },
+  // {
+  //   name: 'Articles',
+  //   slug: '/blog',
+  //   Icon: TfiPencilAlt,
+  // },
   {
     name: 'Projects',
     slug: '/projects',

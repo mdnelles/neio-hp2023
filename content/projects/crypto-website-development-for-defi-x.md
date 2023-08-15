@@ -1,15 +1,17 @@
 ---
 layout: Post
-title: Crypto website development for DeFi X
+title: CRUD Dashboard for Employees Database
 description: The Time Traveller (for so it will be convenient to speak of him) was expounding a recondite matter to us.
-date: '2022-11-22'
+date: '2023-01-22'
 tags:
-  - next-js
-  - stripe
-  - shopify
+  - React
+  - Redux
+  - NodeJS
+  - MySQL
+  - Material UI
 logo:
   src: /icons/logo-3.svg
-  alt: Company X
+  alt: CRUD Dashboard for Employees Database
 images:
   - src: /projects/project-3.png
     alt: Control Panel Dashboard
