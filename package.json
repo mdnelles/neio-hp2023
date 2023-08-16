@@ -1,10 +1,9 @@
 {
-  "name": "next-theme-edgefolio",
+  "name": "nelles-portfolio",
   "version": "1.1.2",
   "private": true,
   "repository": {
-    "type": "git",
-    "url": "https://github.com/ElegantStack/edgefolio.git"
+    "type": "git"
   },
   "engines": {
     "node": ">=14.0"
@@ -68,7 +67,7 @@
     "eslint-config-next": "^13.4.13",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
-    "next-remote-watch": "^2.0.0",
+    "next-remote-watch": "^1.0.0",
     "postcss": "^8.4.27",
     "prettier": "^3.0.1",
     "prettier-plugin-tailwindcss": "^0.5.2",

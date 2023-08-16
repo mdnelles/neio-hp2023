@@ -1,28 +1,38 @@
 ---
 layout: Post
-title: Brand refresh for saas cloud platform application
-description: The Time Traveller (for so it will be convenient to speak of him) was expounding a recondite matter to us.
-date: '2022-11-21'
+title: CRUD Dashboard for Employees Database
+description: React Hooks Application accessing API Endpoints to perform CRUD operations on a MySQL Database
+date: '2023-01-22'
 tags:
-  - next-js
-  - tailwindcss
-  - graphql
+  - React
+  - Redux
+  - NodeJS
+  - MySQL
+  - Material UI
 logo:
-  src: /icons/logo-2.svg
-  alt: Company X
+  src: /portaitSM.png
+  alt: CRUD Dashboard for Employees Database
 images:
-  - src: /projects/project-2.png
-    alt: image alt text
+  - src: /projects/project-1.png
+    alt: Control Panel Dashboard
     overlay:
-      src: /projects/project-2-mobile.png
-      alt: overlay image
-  - src: /projects/project-2.png
-    alt: image alt text
+      src: /projects/project-1-mobile.png
+      alt: Control Panel Mobile
+  - src: /projects/project-1-3.png
+    alt: Customers Dashboard
+  - src: /projects/project-1-2.png
+    alt: Inovice & Payments
+  - src: /projects/project-1-1.png
+    alt: Dark Mode
 attributes:
   - label: Duration
-    value: 14 Weeks
+    value: 3 Weeks
   - label: Role
-    value: Admin Panel Design
+    value: Fulls stack and Production Deployment
+  - label: Notes
+    value: Multi-User access creds
+  - label: Technology
+    value: MERN Stack JWT, Sequelize, Redux, Material UI
 ---
 
 Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. Using Markdown is different than using a WYSIWYG editor. In an application like Microsoft Word, you click buttons to format words and phrases, and the changes are visible immediately. Markdown isn’t like that. When you create a Markdown-formatted file, you add Markdown syntax to the text to indicate which words and phrases should look different.

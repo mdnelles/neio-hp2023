@@ -6,7 +6,13 @@
  * Icons from react-icons: https://react-icons.github.io/react-icons
  */
 
-import { IoLogoTwitter, IoLogoInstagram, IoLogoLinkedin } from 'react-icons/io5'
+import {
+  IoLogoTwitter,
+  IoLogoInstagram,
+  IoLogoLinkedin,
+  IoLogoGithub,
+  IoLogoStackoverflow,
+} from 'react-icons/io5'
 import { TfiHome, TfiPencilAlt } from 'react-icons/tfi'
 import { SlUser, SlBriefcase, SlEnvolope, SlTrophy } from 'react-icons/sl'
 
@@ -71,19 +77,24 @@ export const menu = [
 
 export const social = [
   {
-    name: 'Twitter',
-    url: 'https://www.twitter.com/',
-    Icon: IoLogoTwitter,
-  },
-  {
-    name: 'Instagram',
-    url: 'https://www.instagram.com/',
-    Icon: IoLogoInstagram,
+    name: 'GitHub',
+    url: 'https://github.com/mdnelles',
+    Icon: IoLogoGithub,
   },
   {
     name: 'LinkedIn',
-    url: 'https://www.linkedin.com/',
+    url: 'https://www.linkedin.com/in/michaelnelles/',
     Icon: IoLogoLinkedin,
+  },
+  {
+    name: 'Stack Overflow',
+    url: 'https://stackoverflow.com/users/4241624/michael-nelles',
+    Icon: IoLogoStackoverflow,
+  },
+  {
+    name: 'Twitter',
+    url: 'https://twitter.com/MdNelles',
+    Icon: IoLogoTwitter,
   },
 ]
 

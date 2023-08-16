@@ -1,15 +1,16 @@
 ---
 layout: Post
-title: Application design for finance startup
-description: The Time Traveller (for so it will be convenient to speak of him) was expounding a recondite matter to us.
-date: '2022-11-21'
+title: React NPM 3D Animation Component
+description: React NPM 3D Animation Component
+date: '2023-03-21'
 tags:
-  - svelte
-  - tailwindcss
-  - prisma
+  - React
+  - NPM
+  - WebGL
+  - Material UI
 logo:
-  src: /icons/logo-4.svg
-  alt: Company X
+  src: /icons/css-3.svg
+  alt: App
 images:
   - src: /projects/project-4.png
     alt: image alt text

@@ -4,6 +4,7 @@ import ContentRenderer from '@/components/ContentRenderer'
 import Reveal from '@/components/Reveal'
 
 const Layout = ({ projects, github }) => {
+  console.log(projects);
   return (
     <div className="mx-auto p-3 md:p-6 lg:p-12">
       <div className="prose prose-headings:mb-4 dark:prose-invert">

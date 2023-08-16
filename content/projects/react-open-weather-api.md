@@ -1,40 +1,27 @@
 ---
 layout: Post
-title: CRUD Dashboard for Employees Database
-description: The Time Traveller (for so it will be convenient to speak of him) was expounding a recondite matter to us.
-date: '2023-01-22'
+title: Open Weather API
+description: Open Weather API
+date: '2022-10-21'
 tags:
-  - React
-  - Redux
-  - NodeJS
-  - MySQL
-  - Material UI
+  - api
+  - react
 logo:
-  src: /icons/logo-3.svg
-  alt: CRUD Dashboard for Employees Database
+  src: /icons/css-3.svg
+  alt: App
 images:
-  - src: /projects/project-3.png
-    alt: Control Panel Dashboard
+  - src: /projects/project-5.png
+    alt: image alt text
     overlay:
-      src: /projects/project-3-mobile.png
-      alt: Control Panel Mobile
-  - src: /projects/project-1.png
-    alt: Customers Dashboard
-  - src: /projects/project-2.png
-    alt: Inovice & Payments
-  - src: /projects/project-3.png
-    alt: Inovice & Payments
-  - src: /projects/project-4.png
-    alt: Inovice & Payments
+      src: /projects/project-5-mobile.png
+      alt: overlay image
+  - src: /projects/project-5.png
+    alt: image alt text
 attributes:
   - label: Duration
-    value: 3 Weeks
+    value: 14 Weeks
   - label: Role
-    value: NodeJS API Server
-  - label: Atmosphere
-    value: Cool
-  - label: Technology
-    value: GRaphQL
+    value: Admin Panel Design
 ---
 
 Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. Using Markdown is different than using a WYSIWYG editor. In an application like Microsoft Word, you click buttons to format words and phrases, and the changes are visible immediately. Markdown isn’t like that. When you create a Markdown-formatted file, you add Markdown syntax to the text to indicate which words and phrases should look different.
