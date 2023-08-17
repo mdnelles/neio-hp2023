@@ -18,8 +18,7 @@ images:
     overlay:
       src: /projects/project-1-mobile.png
       alt: Control Panel Mobile
-  - src: /projects/project-1-3.png
-    alt: Customers Dashboard
+c    alt: Customers Dashboard
   - src: /projects/project-1-2.png
     alt: Inovice & Payments
   - src: /projects/project-1-1.png
@@ -55,13 +54,7 @@ To create a heading, add number signs (#) in front of a word or phrase. The numb
 
 ## Heading level 2
 
-### Heading level 3
 
-#### Heading level 4
-
-##### Heading level 5
-
-###### Heading level 6
 
 ---
 
