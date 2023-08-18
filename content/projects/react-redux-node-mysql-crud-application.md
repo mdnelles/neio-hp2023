@@ -10,15 +10,14 @@ tags:
   - MySQL
   - Material UI
 logo:
-  src: /portaitSM.png
+  src: /icons/css-3.svg
   alt: CRUD Dashboard for Employees Database
 images:
   - src: /projects/project-1.png
     alt: Control Panel Dashboard
     overlay:
-      src: /projects/project-1-mobile.png
-      alt: Control Panel Mobile
-c    alt: Customers Dashboard
+  - src: /projects/project-1-mobile.png
+    alt: Customers Dashboard
   - src: /projects/project-1-2.png
     alt: Inovice & Payments
   - src: /projects/project-1-1.png
