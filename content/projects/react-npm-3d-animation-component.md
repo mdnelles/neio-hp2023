@@ -9,11 +9,11 @@ tags:
   - WebGL
   - Material UI
 logo:
-  src: /icons/css-3.svg
+  src: /icons/react-2.svg
   alt: App
 images:
   - src: /projects/project-4.png
-    alt: image alt text
+    alt: app
     overlay:
       src: /projects/project-4-mobile.png
       alt: overlay image
@@ -26,282 +26,138 @@ attributes:
     value: Accessibility
 ---
 
-Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. Using Markdown is different than using a WYSIWYG editor. In an application like Microsoft Word, you click buttons to format words and phrases, and the changes are visible immediately. Markdown isn’t like that. When you create a Markdown-formatted file, you add Markdown syntax to the text to indicate which words and phrases should look different.
 
-### Paragraphs
+### About this project
 
-To create paragraphs, use a blank line to separate one or more lines of text like this:
+- Live version of the site here: [AI NextJS](https://nextai.nelles.io/)
+- [Github Source Code](https://github.com/mdnelles/AI_nextjs)
 
-First paragraph. I really like using Markdown.
+### Technology Stack (extended):
 
-Second paragraph. *Italic*, **bold**, ~~strikethrough~~, Emoji 😂 ⛺, and `monospace`. I think I'll use it to format all of my documents from now on.
+- **Next.js, TypeScript, Google Cloud, ChatGPT API:** As previously mentioned.
+- **MongoDB:** A NoSQL database used to store and manage the conversation history and AI-generated responses.
+
+### Features (with MongoDB integration):
+
+- **Conversation History Storage:**
+    - Each user's conversation history is stored in MongoDB.
+    - Conversations are organized as documents, containing user inputs and AI-generated responses in chronological order.
+
+### Workflow (with MongoDB integration):
+
+- **User Interaction:**
+    - Users interact with the conversational interface as described earlier.
+
+- **Conversational AI Processing:**
+    - The frontend and backend processes remain the same.
+
+- **Storing Conversations in MongoDB:**
+    - After receiving the AI-generated response from the ChatGPT API, the backend saves the user input and AI response as a document in MongoDB.
+    - The document includes metadata such as timestamp, user ID, and conversation context.
+
+- **Retrieving and Displaying Conversations:**
+    - Users can request their conversation history.
+    - The backend queries MongoDB to retrieve the user's conversation documents.
+    - The frontend displays the retrieved conversations, allowing users to review their interactions.
+
+### Use Cases (with MongoDB integration):
+
+- MongoDB allows users to revisit past interactions, making it useful for reference, analysis, or record-keeping purposes.
+- Users can track the progression of a conversation and review AI-generated responses.
+
+### Benefits (with MongoDB integration):
+
+- Conversation history is persisted, enabling users to access past interactions.
+- MongoDB offers flexibility in managing unstructured or semi-structured data like chat conversations.
+- Historical data can be used for analysis or improvement of the AI model.
+
+### Future Enhancements (with MongoDB integration):
+
+- Implementing search and filtering options for users to easily find specific conversations.
+- Adding user preferences to customize conversation storage, retrieval, or privacy settings.
+- Incorporating analytics to gain insights from the stored conversation data.
+
+By integrating MongoDB into the app, I have adding a valuable layer of data storage that enables users to revisit their past conversations with the AI chatbot. This enhances the user experience and provides a historical context for interactions.
 
 ---
 
-### Headings
+### Tech Stack
 
-To create a heading, add number signs (#) in front of a word or phrase. The number of number signs you use should correspond to the heading level. For example, to create a heading level three (`<h3>`), use three number signs (e.g., `### My Header`).
+ - [NextJS](https://nextjs.org/)
+ - [React](https://reactjs.org/)
+ - [ChatGPT](https://openai.com/blog/openai-api/)
+ - [Google Cloud](https://cloud.google.com/)
+ - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+ - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+ - [TypeScript](https://www.typescriptlang.org/)
+ - [MongoDB](https://www.mongodb.com/)
 
-# Heading level 1
 
-## Heading level 2
 
-### Heading level 3
-
-#### Heading level 4
-
-##### Heading level 5
-
-###### Heading level 6
 
 ---
 
 ### Code-Block
 
-The Markdown syntax allows you to create code blocks by indenting lines by four spaces or one tab. If you find that inconvenient, try using fenced code blocks. To do that, you’ll use three backticks (```) on the lines before and after the code block. The best part? You don’t have to indent any lines!
+An example of the NextJS API Route:
+[Github Repo Source Code](https://github.com/mdnelles/AI_nextjs/)
 
-  ```js  {4-7} showLineNumbers
-  import contact from './contact.js';
 
-  // below 3 lines are highlighted
-  const person = {
-    name: 'Sara',
-    age: 25,
-  }
 
-  let name = person.name;
-  let age = person.age;
+  ```js  {21-36} showLineNumbers
+  "use client";
 
-  // returns a promise
-  let countValue = new Promise(function (resolve, reject) {
-    reject('Promise rejected');
-  });
+import React, { useState } from "react";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+
+import Form from "@/components/Form";
+import { Session } from "next-auth";
+
+const CreatePrompt = () => {
+   const router = useRouter();
+   const { data: session }: { data: Session | null } = useSession();
+
+   const [submitting, setIsSubmitting] = useState(false);
+   const [post, setPost] = useState({ prompt: "", tag: "" });
+
+   const createPrompt = async (e: React.MouseEvent<HTMLButtonElement>) => {
+      e.preventDefault();
+      setIsSubmitting(true);
+
+      try {
+         const response = await fetch("/api/prompt/new", {
+            method: "POST",
+            body: JSON.stringify({
+               prompt: post.prompt,
+               userId:
+                  session && session.user && session.user.id
+                     ? session.user.id
+                     : null,
+               tag: post.tag,
+            }),
+         });
+
+         if (response.ok) {
+            router.push("/");
+         }
+      } catch (error) {
+         console.log(error);
+      } finally {
+         setIsSubmitting(false);
+      }
+   };
+
+   return (
+      <Form
+         type='Create'
+         post={post}
+         setPost={setPost}
+         submitting={submitting}
+         handleSubmit={createPrompt}
+      />
+   );
+};
+
+export default CreatePrompt;
   ```
-
-Code blocks can also be used inside the `<Wide />` component.
-
-<Wide>
-
-  ```js  {4-7} showLineNumbers
-  import contact from './contact.js';
-
-  // below 3 lines are highlighted
-  const person = {
-    name: 'Sara',
-    age: 25,
-  }
-
-  let name = person.name;
-  let age = person.age;
-
-  // returns a promise
-  let countValue = new Promise(function (resolve, reject) {
-    reject('Promise rejected');
-  });
-  ```
-
-</Wide>
-
----
-
-### Tip Jar
-
-In order to receive tips (contributions) from your readers, we've developed a fully-functional `<TipJar />` React Component integrated with [ConvertKit](https://convertkit.com?lmref=CeGsMw&utm_campaign=documentation) that you can use anywhere in your blog posts or pages.
-
-```md
-<TipJar />
-```
-This will render the TipJar component:
-
-<TipJar />
-
----
-
-### Newsletter
-
-The theme is integrated with [ConvertKit](https://convertkit.com?lmref=CeGsMw&utm_campaign=documentation) to grow your email list of subscribers. By creating an email list, you can notify your subscribers when you publish new blog posts or market and sell your digital products to your subscribers. The newsletter component is
-
-```md
-<Newsletter className="bg-omega-800 p-10" />
-```
-This will render the Newsletter component:
-
-<Newsletter className="bg-omega-800 p-10" />
----
-
-### Images
-
-To add an image, add an exclamation mark (!), followed by alt text in brackets, and the path or URL to the image asset in parentheses. You can optionally add a title in quotation marks after the path or URL.
-
-```md
-![This is the caption](/photos/blog-performance.jpg "Team meeting")
-```
-This image is wrapper inside the `<Wide />` component.
-
-<Wide>
-  ![This is the caption](/photos/blog-performance.jpg "Team meeting")
-</Wide>
-
-### Linked Images
-
-To add a link to an image, enclose the Markdown for the image in brackets, and then add the link in parentheses.
-
-```md
-[![This is the caption](/photos/blog-performance.jpg "Team meeting")](https://en.wikipedia.org/wiki/Meeting)
-```
-
----
-
-### Youtube Videos
-
-You can embed youtube videos using the `<Youtube />` component and passing the Youtube video ID to it.
-
-```md
-<Youtube
-  id="W4UhNo3HAMw"
-  title="Next.js 13.1 Explained"
-/>
-```
-This will render below embed:
-
-<Wide>
-  <Youtube
-    id="W4UhNo3HAMw"
-    title="Next.js 13.1 Explained"
-  />
-</Wide>
-
----
-
-### Tables
-
-To add a table, use three or more hyphens (---) to create each column’s header, and use pipes (|) to separate each column. For compatibility, you should also add a pipe on either end of the row.
-
-Tables can look like this:
-
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
-| Table data   | Text        |
-
-You can align text in the columns to the left, right, or center by adding a colon (:) to the left, right, or on both side of the hyphens within the header row.
-
-|Header 1 |Header 2  | Header 3|
-|:--- | ---: | :---:|
-|Align left| Align right|center text|
-|cell data1|cell data2|cell data3|
-
----
-
-### Lists
-
-You can organize items into ordered and unordered lists.
-
-##### Ordered Lists
-
-To create an ordered list, add line items with numbers followed by periods. The numbers don’t have to be in numerical order, but the list should start with the number one.
-
-1. First item
-2. Second item
-3. Third item
-4. Fourth item
-
-To create an unordered list, add dashes (-), asterisks (*), or plus signs (+) in front of line items. Indent one or more items to create a nested list.
-
-##### Unordered Lists
-
-- First item
-- Second item
-- Third item
-- Fourth item
-
-##### Nested Lists
-
-Now a nested list:
-
- 1. First, get these ingredients:
-
-      * carrots
-      * celery
-      * lentils
-
- 2. Boil some water.
-
- 3. Dump everything in the pot and follow
-    this algorithm:
-
-        find wooden spoon
-        uncover pot
-        stir
-        cover pot
-        balance wooden spoon precariously on pot handle
-        wait 10 minutes
-        goto first step (or shut off burner when done)
-
-    Do not bump wooden spoon or it will fall.
-
-Notice again how text always lines up on 4-space indents (including
-that last line which continues item 3 above).
-
----
-
-### Links
-
-To create a link, enclose the link text in brackets (e.g., `[Duck Duck Go]`) and then follow it immediately with the URL in parentheses (e.g., `(https://duckduckgo.com)`).
-
-Here's a link to [a website](http://foo.bar), to a [local
-page](services), and to a [code block section in the current
-doc](#code-block).
-
----
-
-### Blockquotes
-
-To create a blockquote, add a > in front of a paragraph. The rendered output looks like this:
-
-> Block quotes are
-> written like so.
-
-Blockquotes can contain other Markdown formatted elements. Not all elements can be used — you’ll need to experiment to see which ones work.
-
-> ###### Blockquotes with Other Elements
->
-> - Revenue was off the chart.
-> - Profits were higher than ever.
->
->  *Everything* is going according to **plan**.
-
----
-
-### HTML
-
-You can use HTML tags in Markdown-formatted text. This is helpful if you prefer certain HTML tags to Markdown syntax. For example, some people find it easier to use HTML tags for images. Using HTML is also helpful when you need to change the attributes of an element, like specifying the color of text or changing the width of an image.
-
-To use HTML, place the tags in the text of your Markdown-formatted file.
-
-```md
-This **word** is bold. This <em>word</em> is italic.
-```
-
-The rendered output looks like this:
-
-This **word** is bold. This <em>word</em> is italic.
-
----
-
-### Task Lists
-
-Task lists (also referred to as checklists and todo lists) allow you to create a list of items with checkboxes. In Markdown applications that support task lists, checkboxes will be displayed next to the content. To create a task list, add dashes (-) and brackets with a space ([ ]) in front of task list items. To select a checkbox, add an x in between the brackets ([x]).
-
-```md
-- [x] Write the press release
-- [ ] Update the website
-- [ ] Contact the media
-```
-
-The rendered output looks like this:
-
-- [x] Write the press release
-- [ ] Update the website
-- [ ] Contact the media
