@@ -29,69 +29,80 @@ attributes:
 
 ### About this project
 
-- Live version of the site here: [AI NextJS](https://nextai.nelles.io/)
-- [Github Source Code](https://github.com/mdnelles/AI_nextjs)
+- Live version of the site here: [3D Playground](https://mdnelles.github.io/a3o-playground/)
+- [Github Source Code](https://github.com/mdnelles/anim-3d-obj-npm-publisher)
 
-### Technology Stack (extended):
+---
+# React Typescript Cuboid Builder
 
-- **Next.js, TypeScript, Google Cloud, ChatGPT API:** As previously mentioned.
-- **MongoDB:** A NoSQL database used to store and manage the conversation history and AI-generated responses.
+This project allows a user to create Cuboids of any size simply by entering a set of parameters.  
+The program does the leg work with regard to calculating translationZ depth and config on the fly.
 
-### Features (with MongoDB integration):
 
-- **Conversation History Storage:**
-    - Each user's conversation history is stored in MongoDB.
-    - Conversations are organized as documents, containing user inputs and AI-generated responses in chronological order.
+## Config
+### Animations:
 
-### Workflow (with MongoDB integration):
+Animations are optional. Either or both of `anim1` or `anim2` can be applied to the component. Animations are applied to 2 wrapping divs respectively.
 
-- **User Interaction:**
-    - Users interact with the conversational interface as described earlier.
+```typescript
+const anim1 = {
+   border: "", // while testing reveal the animation wrapper
+   degreesHi: -45, // degrees if spin
+   degreesLow: 45, // degrees if spin
+   delay: 0, // start delay in seconds
+   direction: "normal", //normal alternating reverse
+   duration: 8, // seconds
+   fillMode: "forwards", // none forwards backwards both
+   iterationCount: "infinite", // number or infinte
+   name: "Y360", // ** ANIMATIONS (above)
+   timing: "ease-in-out", // linear ease ease-in-out
+};
+```
 
-- **Conversational AI Processing:**
-    - The frontend and backend processes remain the same.
+### Faces:
+This is an array of objects containing the face used for a given component
+```javascript
+   export interface FaceType {
+      name?: string; // front,back,left,right,top,top_rear,top_front,bottom,bottom_rear,bottom_front
+      css?: string | undefined;
+      body?: any; // can be JSX Component | string | number
+   }
 
-- **Storing Conversations in MongoDB:**
-    - After receiving the AI-generated response from the ChatGPT API, the backend saves the user input and AI response as a document in MongoDB.
-    - The document includes metadata such as timestamp, user ID, and conversation context.
+   const faces: FaceType[] = [
+      {
+         name: "back",
+         body: "BACK",
+         css: `background:rgba(22,22,22,.5)`,
+      },
+      {
+         name: "right",
+         body: "RIGHT",
+         css: `background:rgba(220,220,220,.5); 
+               border:1px solid #ddd`,
+      },
+   ];
+```
 
-- **Retrieving and Displaying Conversations:**
-    - Users can request their conversation history.
-    - The backend queries MongoDB to retrieve the user's conversation documents.
-    - The frontend displays the retrieved conversations, allowing users to review their interactions.
-
-### Use Cases (with MongoDB integration):
-
-- MongoDB allows users to revisit past interactions, making it useful for reference, analysis, or record-keeping purposes.
-- Users can track the progression of a conversation and review AI-generated responses.
-
-### Benefits (with MongoDB integration):
-
-- Conversation history is persisted, enabling users to access past interactions.
-- MongoDB offers flexibility in managing unstructured or semi-structured data like chat conversations.
-- Historical data can be used for analysis or improvement of the AI model.
-
-### Future Enhancements (with MongoDB integration):
-
-- Implementing search and filtering options for users to easily find specific conversations.
-- Adding user preferences to customize conversation storage, retrieval, or privacy settings.
-- Incorporating analytics to gain insights from the stored conversation data.
-
-By integrating MongoDB into the app, I have adding a valuable layer of data storage that enables users to revisit their past conversations with the AI chatbot. This enhances the user experience and provides a historical context for interactions.
-
+### Global (face):
+If the name parameter in the faces array is indicated (ie: "front") but `css` and / or `body` are not.  The `global default`(below) will satisfy those parameters.
+```javascript
+   interface GlobalType {
+      css?: string;
+      body?: string;
+   }
+   const global: GlobalType = {
+      body: "BODY FOR FACE WHICH DOES NOT CONTAIN BODY",
+      css: 'color:red'
+   };
+```
 ---
 
 ### Tech Stack
 
- - [NextJS](https://nextjs.org/)
  - [React](https://reactjs.org/)
- - [ChatGPT](https://openai.com/blog/openai-api/)
- - [Google Cloud](https://cloud.google.com/)
  - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
  - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
  - [TypeScript](https://www.typescriptlang.org/)
- - [MongoDB](https://www.mongodb.com/)
-
 
 
 
@@ -105,59 +116,57 @@ An example of the NextJS API Route:
 
 
   ```js  {21-36} showLineNumbers
-  "use client";
+  import React from "react";
+import { ObjWrapper } from "./styles/Global";
+import { AnimWrap } from "./styles/AnimWrap";
+import { SceneStyle } from "./styles/Scene";
+import Face from "./Face";
+import { FaceType, ObjProps } from "./types";
 
-import React, { useState } from "react";
-import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+export default function (props: ObjProps): JSX.Element {
+  let {
+    anim1,
+    anim2,
+    width = 5,
+    height = 5,
+    depth = 5,
+    global = {},
+    faces,
+    perspective,
+    perspectiveOrigin,
+    zIndex,
+  } = props;
 
-import Form from "@/components/Form";
-import { Session } from "next-auth";
+  // process config
+  const buildFace = (face: FaceType): any => {
+    const details = {
+      width,
+      height,
+      depth,
+      face,
+      global,
+    };
+    return <Face {...details} key={face.name} />;
+  };
 
-const CreatePrompt = () => {
-   const router = useRouter();
-   const { data: session }: { data: Session | null } = useSession();
-
-   const [submitting, setIsSubmitting] = useState(false);
-   const [post, setPost] = useState({ prompt: "", tag: "" });
-
-   const createPrompt = async (e: React.MouseEvent<HTMLButtonElement>) => {
-      e.preventDefault();
-      setIsSubmitting(true);
-
-      try {
-         const response = await fetch("/api/prompt/new", {
-            method: "POST",
-            body: JSON.stringify({
-               prompt: post.prompt,
-               userId:
-                  session && session.user && session.user.id
-                     ? session.user.id
-                     : null,
-               tag: post.tag,
-            }),
-         });
-
-         if (response.ok) {
-            router.push("/");
-         }
-      } catch (error) {
-         console.log(error);
-      } finally {
-         setIsSubmitting(false);
-      }
-   };
-
-   return (
-      <Form
-         type='Create'
-         post={post}
-         setPost={setPost}
-         submitting={submitting}
-         handleSubmit={createPrompt}
-      />
-   );
-};
-
-export default CreatePrompt;
+  return (
+    <SceneStyle
+      width={width}
+      height={height}
+      perspective={perspective}
+      perspectiveOrigin={perspectiveOrigin}
+      zIndex={zIndex}
+    >
+      <AnimWrap animSpecs={anim1}>
+        <AnimWrap animSpecs={anim2}>
+          <ObjWrapper>
+            {faces && faces[0]
+              ? faces.map((face) => (face.name ? buildFace(face) : null))
+              : null}
+          </ObjWrapper>
+        </AnimWrap>
+      </AnimWrap>
+    </SceneStyle>
+  );
+}
   ```

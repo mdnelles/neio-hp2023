@@ -27,70 +27,34 @@ attributes:
 
 ### About this project
 
-- Live version of the site here: [AI NextJS](https://nextai.nelles.io/)
-- [Github Source Code](https://github.com/mdnelles/AI_nextjs)
+- Live version of the site here: [Live Weather](https://weather.nelles.io/)
+- [Github Source Code](https://github.com/mdnelles/WeatherAPI/)
 
-### Technology Stack (extended):
 
-- **Next.js, TypeScript, Google Cloud, ChatGPT API:** As previously mentioned.
-- **MongoDB:** A NoSQL database used to store and manage the conversation history and AI-generated responses.
-
-### Features (with MongoDB integration):
-
-- **Conversation History Storage:**
-    - Each user's conversation history is stored in MongoDB.
-    - Conversations are organized as documents, containing user inputs and AI-generated responses in chronological order.
-
-### Workflow (with MongoDB integration):
-
-- **User Interaction:**
-    - Users interact with the conversational interface as described earlier.
-
-- **Conversational AI Processing:**
-    - The frontend and backend processes remain the same.
-
-- **Storing Conversations in MongoDB:**
-    - After receiving the AI-generated response from the ChatGPT API, the backend saves the user input and AI response as a document in MongoDB.
-    - The document includes metadata such as timestamp, user ID, and conversation context.
-
-- **Retrieving and Displaying Conversations:**
-    - Users can request their conversation history.
-    - The backend queries MongoDB to retrieve the user's conversation documents.
-    - The frontend displays the retrieved conversations, allowing users to review their interactions.
-
-### Use Cases (with MongoDB integration):
-
-- MongoDB allows users to revisit past interactions, making it useful for reference, analysis, or record-keeping purposes.
-- Users can track the progression of a conversation and review AI-generated responses.
-
-### Benefits (with MongoDB integration):
-
-- Conversation history is persisted, enabling users to access past interactions.
-- MongoDB offers flexibility in managing unstructured or semi-structured data like chat conversations.
-- Historical data can be used for analysis or improvement of the AI model.
-
-### Future Enhancements (with MongoDB integration):
-
-- Implementing search and filtering options for users to easily find specific conversations.
-- Adding user preferences to customize conversation storage, retrieval, or privacy settings.
-- Incorporating analytics to gain insights from the stored conversation data.
-
-By integrating MongoDB into the app, I have adding a valuable layer of data storage that enables users to revisit their past conversations with the AI chatbot. This enhances the user experience and provides a historical context for interactions.
 
 ---
 
 ### Tech Stack
 
- - [NextJS](https://nextjs.org/)
  - [React](https://reactjs.org/)
- - [ChatGPT](https://openai.com/blog/openai-api/)
- - [Google Cloud](https://cloud.google.com/)
- - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
- - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
  - [TypeScript](https://www.typescriptlang.org/)
- - [MongoDB](https://www.mongodb.com/)
+ - [Open API](https://openweathermap.org/api)
 
+# Real-Time Weather Updates App
 
+Welcome to the Real-Time Weather Updates App! This application provides you with up-to-date weather information for various cities and states. Built using React, this app fetches weather data from an API and displays it in a user-friendly interface. Stay informed about the current weather conditions, forecasts, and more!
+
+## Features
+
+- **User-friendly Interface**: The app's frontend is developed using React, offering a clean and intuitive user interface. The design is aimed at providing a seamless experience while viewing weather updates.
+
+- **Real-Time Weather Data**: The application fetches real-time weather data from a weather API. This ensures that the displayed information is accurate and up-to-date.
+
+- **City and State Selection**: Users can search for weather updates by specifying the desired city and state. This allows for personalized weather information based on the user's preferences.
+
+- **Current Conditions and Forecasts**: The app provides both current weather conditions and short-term forecasts, giving users a comprehensive overview of the weather.
+
+## Installation and Setup
 
 
 ---
@@ -103,59 +67,55 @@ An example of the NextJS API Route:
 
 
   ```js  {21-36} showLineNumbers
-  "use client";
+  export default function Data() {
+   const dis = useAppDispatch();
 
-import React, { useState } from "react";
-import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
-
-import Form from "@/components/Form";
-import { Session } from "next-auth";
-
-const CreatePrompt = () => {
-   const router = useRouter();
-   const { data: session }: { data: Session | null } = useSession();
-
-   const [submitting, setIsSubmitting] = useState(false);
-   const [post, setPost] = useState({ prompt: "", tag: "" });
-
-   const createPrompt = async (e: React.MouseEvent<HTMLButtonElement>) => {
-      e.preventDefault();
-      setIsSubmitting(true);
-
-      try {
-         const response = await fetch("/api/prompt/new", {
-            method: "POST",
-            body: JSON.stringify({
-               prompt: post.prompt,
-               userId:
-                  session && session.user && session.user.id
-                     ? session.user.id
-                     : null,
-               tag: post.tag,
-            }),
-         });
-
-         if (response.ok) {
-            router.push("/");
-         }
-      } catch (error) {
-         console.log(error);
-      } finally {
-         setIsSubmitting(false);
-      }
-   };
-
-   return (
-      <Form
-         type='Create'
-         post={post}
-         setPost={setPost}
-         submitting={submitting}
-         handleSubmit={createPrompt}
-      />
+   const data: ForecastState | any = useAppSelector(
+      (state) => state.forecast.value
    );
-};
+   const session: SessionState = useAppSelector((state) => state.session);
+   const forecast: ForecastState = useAppSelector((state) => state.forecast);
+   const [obj, setObj] = useState<any | ForecastArr>(undefined);
+   const [city, setCity] = useState<string>("");
 
-export default CreatePrompt;
+   const temp: number = parseInt(data.list[0].main.temp);
+   const icon = data.list[0].weather[0].icon;
+   const front = data.list[0].weather[0].description;
+   const back = `Wind speed: ${data.list[0].wind.speed} mph`;
+   const top = `Humidity ${data.list[0].main.humidity}%`;
+   const bottom = `Pressure ${data.list[0].main.pressure / 10}kPa`;
+
+   if (city !== session.city) setCity(session.city);
+
+   if (!obj || !obj.city || data.city.name !== obj.city)
+      setObj(build_forcast_obj(data));
+
+   //console.log(build_forcast_obj(data));
+
+   useEffect(() => {
+      if (session.city !== forecast.value.city.name) {
+         (async () => {
+            try {
+               const response = await fetch(
+                  `${API_URL}?q=${city}&units=imperial&APPID=${API_KEY}`
+               );
+               if (response.status === 200) {
+                  const data = await response.json();
+                  dis(updateForecast(data));
+               } else {
+                  alert(`Could not find city: ` + city);
+               }
+            } catch (error) {
+               console.log(error);
+            }
+         })();
+      }
+   }, [session.city]);
+   useEffect(() => {
+      console.log("UE forecast: " + session.city);
+   }, [forecast]);
+   useEffect(() => {
+      console.log("UE forecast: " + session.unit);
+   }, [session.unit]);
+
   ```
