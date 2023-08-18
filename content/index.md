@@ -35,9 +35,7 @@ Thank you for taking the time to view my personal website. I am a remote-work-on
 
 ---cta
 ---
-<Button href="/dwn-resume.pdf" size="lg">
-  Download Resume
-</Button>
+
 
 
 

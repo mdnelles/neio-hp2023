@@ -147,10 +147,10 @@ export const siteMetaData = {
   defaultTitle: 'Michael Nelles Personal Site',
   titleTemplate: 'Michael Nelles | %s',
   description: 'A short description goes here.',
-  email: 'hello@example.com',
+  email: 'michael@nelles.io',
   locale: 'en_US',
   twitter: {
-    handle: '@handle',
+    handle: '@mdnelles',
     site: '@site',
     cardType: 'summary_large_image',
   },

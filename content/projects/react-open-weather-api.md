@@ -40,7 +40,7 @@ attributes:
  - [TypeScript](https://www.typescriptlang.org/)
  - [Open API](https://openweathermap.org/api)
 
-# Real-Time Weather Updates App
+## Real-Time Weather Updates App
 
 Welcome to the Real-Time Weather Updates App! This application provides you with up-to-date weather information for various cities and states. Built using React, this app fetches weather data from an API and displays it in a user-friendly interface. Stay informed about the current weather conditions, forecasts, and more!
 

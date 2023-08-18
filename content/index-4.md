@@ -56,10 +56,6 @@ Featured handcrafted articles about my thoughts and experiments.
 
 
 ---cta
----
-<Button href="/contact" size="sm">
-  Download Resume
-</Button>
 
 
 

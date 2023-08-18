@@ -41,9 +41,6 @@ sponge.
 
 ---cta
 ---
-<Button href="/contact" size="sm">
-  Download Resume
-</Button>
 
 
 
