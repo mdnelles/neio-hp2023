@@ -13,7 +13,7 @@ images:
   - src: /about2.jpg
     alt: my image
 ---
-##### <span>01.</span> About me
+##### <span>01.</span> About Me
 
 Innovative and deadline-driven Javascript Framework Engineer with 5+ years of experience designing and developing data driven applications from wireframe to production.
 
@@ -62,7 +62,7 @@ list:
 title: Back-End Development
 list:
   - title: Node.js
-    level: 4
+    level: 5
     icon:
       src: /icons/nodejs-icon.svg
   - title: CI/CD
