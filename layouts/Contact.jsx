@@ -55,7 +55,7 @@ const Contact01 = ({ main = {} }) => {
         >
            <FormProvider {...methods}>
               <div className="relative overflow-hidden shadow">
-                <Image src='/working.png' alt="working" className="w-full h-auto ml-4" width={400} height={350}/>
+                <Image src={'/working.png'} alt="working" className="w-full h-auto ml-4" width={400} height={350}/>
                 
                 
               </div>

@@ -15,17 +15,13 @@ images:
 ---
 ##### <span>01.</span> About Me
 
-Innovative and deadline-driven Javascript Framework Engineer with 5+ years of experience designing and developing data driven applications from wireframe to production.
+I am Canadian born raised and educated.  After graduating from York University with a BSc in Computer Science, I began my career as a Full Stack Engineer.  I have worked with a variety of companies, from startups to large corporations, and have gained a wealth of experience in the process.  
 
-Highly compatible in the UX/UI environment as an Engineer for implementation of concepts brought forth by Visual Designers & Interaction designers alike.
+I am a highly motivated individual who is always looking for new challenges and opportunities to learn.  I am passionate about technology and enjoy working with others to solve problems and create innovative solutions.  I am a self-starter who is able to work independently or as part of a team.  I am a quick learner who is able to pick up new skills quickly.  
 
-##### <span>02.</span> Interests and Hobbies
+I am a hard worker who is able to work under pressure and meet deadlines.  I am a creative thinker who is able to come up with new ideas and solutions to problems.  I am a good communicator who is able to explain complex ideas in a clear and concise manner.  I am a good listener who is able to take feedback and use it to improve my work.  
 
-While my skills shine through crafting efficient web applications, my passions span wider horizons. My fascination with Crypto,Architecture and AI isn't just about technology – it's about envisioning the future.  
-
- From optimizing algorithms to designing intricate systems, I see parallels in every aspect. Navigating the complex realm of cryptocurrencies marries my coding prowess with financial intrigue. I am the coder with a vision, threading together innovation, tech, and architecture into a singular, dynamic tapestry.
-
-##### <span>03.</span> Framework Preferences
+##### <span>02.</span> Framework Preferences
 
 - NodeJS  / Express
 - React / NextJS 
