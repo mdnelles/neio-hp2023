@@ -36,7 +36,7 @@ attributes:
 
 ### About this project
 
-- Live version of the site here: [Employees Control Panel](https://emp-dash.nelles.io/login)
+- Live version of the site here: [Employees Control Panel](https://emp-dash.nelles.io)
 - [Source Code Back End](https://github.com/mdnelles/employees.neio.server)
 - [Source Code Front End](https://github.com/mdnelles/employees_fe)
 

@@ -21,8 +21,6 @@ I am open to full-time, part-time, and contract work.
 <Sep size="12" />
 
 <small>
-
-
   <Icon src="/icons/mail.svg" className="mr-2 inline align-middle fill-current text-omega-500" alt="mail" /> Email: michael@nelles.io
 
   <Icon src="/icons/logo-linkedin.svg" className="mr-2 inline align-middle fill-current text-omega-500" alt="linkedin" /> Linkedin: [MichaelNelles](https://www.linkedin.com/in/michaelnelles/)
