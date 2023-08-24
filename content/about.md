@@ -125,7 +125,7 @@ list:
     icon:
       src: /icons/redux.svg
   - title: TypeScript
-    level: 4
+    level: 3
     icon:
       src: /icons/typescript.svg
   - title: HTML5
@@ -136,6 +136,19 @@ list:
     level: 3
     icon:
       src: /icons/css-3.svg
+  - title: Material UI
+    level: 5
+    icon:
+      src: /icons/material-ui-1.svg
+  - title: Bootstrap
+    level: 4
+    icon:
+      src: /icons/bootstrap-5-1.svg
+  - title: jQuery
+    level: 4
+    icon:
+      src: /icons/jquery-4.svg
+
 ---
 
 
