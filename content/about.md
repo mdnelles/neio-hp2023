@@ -19,7 +19,6 @@ I am Canadian born raised and educated.  After graduating from York University w
 
 I am a highly motivated individual who is always looking for new challenges and opportunities to learn.  I am passionate about technology and enjoy working with others to solve problems and create innovative solutions.  I am a self-starter who is able to work independently or as part of a team.  I am a quick learner who is able to pick up new skills quickly.  
 
-I am a hard worker who is able to work under pressure and meet deadlines.  I am a creative thinker who is able to come up with new ideas and solutions to problems.  I am a good communicator who is able to explain complex ideas in a clear and concise manner.  I am a good listener who is able to take feedback and use it to improve my work.  
 
 ##### <span>02.</span> Framework Preferences
 
@@ -88,9 +87,21 @@ list:
     icon:
       src: /icons/mongodb.svg
   - title: NPM
-    level: 3
+    level: 4
     icon:
       src: /icons/npm.svg
+  - title: Python
+    level: 2
+    icon:
+      src: /icons/python-5.svg
+  - title: Docker
+    level: 3
+    icon:
+      src: /icons/docker-4.svg
+  - title: AWS
+    level: 3
+    icon:
+      src: /icons/aws-2.svg
 ---
 
 
