@@ -25,10 +25,20 @@ I am a hard worker who is able to work under pressure and meet deadlines.  I am 
 
 - NodeJS  / Express
 - React / NextJS 
+- Redux / Redux Toolkit
+- HTML5 / CSS3
 - GraphQL / Apollo
 - TypeScript / JavaScript
 - MongoDB / PostgreSQL
+- AWS / RDS, EC2, S3, Lambda
 
+##### <span>02.</span> Familiarity With
+- Bootstrap
+- jQuery
+- Python
+- Firebase
+- Docker
+- Google Cloud
 
 
 
