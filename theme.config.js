@@ -141,7 +141,7 @@ export const mdxConfig = {
  */
 
 export const siteMetaData = {
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL || 'http://localhost:3000',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL || 'http://localhost:3001',
   authorName: 'Michael Nelles',
   siteName: 'Michael Nelles',
   defaultTitle: 'Michael Nelles Personal Site',
