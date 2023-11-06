@@ -23,8 +23,8 @@ images:
   - src: /projects/project-1-3.png
     alt: Dark Mode
 attributes:
-  - label: Duration
-    value: 3 Weeks
+  - label: Features
+    value: MySQL relational database, CRUD operations, Search and Filters
   - label: Role
     value: Fulls stack and Production Deployment
   - label: Notes

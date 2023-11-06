@@ -21,8 +21,8 @@ images:
   - src: /projects/project-2-2.png
     alt: image alt text
 attributes:
-  - label: Duration
-    value: 2 weeks
+  - label: Features
+    value: NextJS, TypeScript, Google Cloud, ChatGPT API
   - label: Role
     value: Developer, Tester, Production
 ---

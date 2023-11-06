@@ -20,8 +20,8 @@ images:
   - src: /projects/project-4.png
     alt: image alt text
 attributes:
-  - label: Duration
-    value: 6 months
+  - label: Features
+    value: 3D Animation
   - label: Role
     value: Accessibility
 ---

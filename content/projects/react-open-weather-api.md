@@ -6,20 +6,21 @@ date: '2022-10-21'
 tags:
   - api
   - react
+  - openWeather
 logo:
   src: /icons/react-2.svg
   alt: App
 images:
   - src: /projects/project-5.png
-    alt: image alt text
+    alt: Open Weather App
     overlay:
       src: /projects/project-5-mobile.png
       alt: overlay image
   - src: /projects/project-5.png
-    alt: image alt text
+    alt: Open Weather App
 attributes:
-  - label: Duration
-    value: 14 Weeks
+  - label: Features
+    value: Live Weather Updates
   - label: Role
     value: Admin Panel Design
 ---

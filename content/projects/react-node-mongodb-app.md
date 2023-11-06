@@ -15,15 +15,15 @@ logo:
   alt: React Node MongoDB App
 images:
   - src: /projects/project-6.png
-    alt: Project 6
+    alt: React MongoDB App
     overlay:
       src: /projects/project-6-mobile.png
       alt: overlay image
-  - src: /projects/project-6-mobile.png
-    alt: image alt text
+  - src: /projects/project-6.png
+    alt: React MongoDB App
 attributes:
-  - label: Duration
-    value: 2 weeks
+  - label: Features
+    value: Language Translation, Conversation History
   - label: Role
     value: Developer, Tester, Production
 ---
@@ -32,8 +32,8 @@ attributes:
 
 ### About this project
 
-- Live version of the site here: [AI NextJS](https://contractor.nelles.io/)
-- [Github Source Code](https://github.com/mdnelles/contractor_fe)
+- Live version of the site here: [Contractor App](https://contractor.nelles.io/)
+- [Github Source Code (FE)](https://github.com/mdnelles/contractor_fe)
 
 ### Technology Stack (extended):
 
@@ -106,7 +106,7 @@ An example of the NextJS API Route:
 [Github Repo Source Code Node/BE](https://github.com/mdnelles/contractor_be)
 
 
-  ```js  {21-36} showLineNumbers
+  ```js  {5-15} showLineNumbers
   import { db } from "../database/db";
 
 import { ObjectId } from "mongodb";
