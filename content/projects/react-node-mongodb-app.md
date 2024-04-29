@@ -1,8 +1,8 @@
 ---
 layout: Post
 title: React Node MongoDB App
-description: React Hooks Application accessing API Endpoints to perform CRUD operations on a MySQL Database
-date: '2023-06-06'
+description: React Hooks Application accessing API Endpoints to perform CRUD operations on a Mongo Database
+date: '2023-09-09'
 tags:
     - React
     - NodeJS

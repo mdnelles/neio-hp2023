@@ -2,7 +2,7 @@
 layout: Home-4
 seo:
   title: Web Developer
-  description: Custom description for this page goes here
+  description: Full Stack Type/Javascript Developer
 ---
 
 ---main
